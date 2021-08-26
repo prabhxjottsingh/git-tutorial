@@ -1,0 +1,215 @@
+<------------------------------------------------------------------------FIRST DAY------------------------------------------------------------------------>
+                                                                         (VIDEO 1-4)
+
+use TAB KEY, rather than typing the fullname of file/folder
+GIT BASH takes path similar to linux ones
+Upper Arrow Key ------> Tells about all the commands history that we have used
+pwd        ------------>  Present Working Directory
+cd         ------------>  To go inside a folder
+cd /c      ------------>  To go inside the C directory
+ls         -------------> list the contents of the folder which you are in
+q          ------------> to stop the task which the git bash is performing, any task, doesn't matter what it is.
+GUI (Graphical User Interface)
+touch filename.extension   ------------> to create new files (The difference between the two file types is that . LOG files are typically generated automatically, while . TXT files are created by the user.)
+
+git config --global user.name "Prabh"                   ----> Sets username to whatever written in double inverted commas
+
+git config --global user.email "Prabhx.jott@gmail.com"  ----> sets the email to whatever written in double inverted commas
+
+we can check above things using command -------------> git log
+
+git config --global user.name ----------------->   Tells the name of the user of the machine
+
+GIT (3 Stage Architecture): 1. Working Directory ----------
+                                     |                     |
+                                     |                     | 
+                                     V                     |
+                            2. Staging Directory           |
+                                     |                     |
+                                     |                     |
+                                     V                     V
+                            3. Repository (File containing all the Data)
+
+
+git status ------------> tells us the files present inside the hidden .git folder
+
+git init ----------------> initializing a new git repo, or we can say that this commands creates the hidden .git folder
+
+branch is by default master(will learn more about this thing later on)
+
+git add --a ------------> to put all the files in STAGING AREA in a single go (--a is for all files, you can use any single file name if you want to do it individually)                 WORKING -----> STAGING DIRECTORY
+
+git commit -m "Initial Commit"     -------> commiting the files in .git folder with a message INTIAL COMMIT, i.e. STAGING ---> Repository
+
+git commit                    ------------> an editor opens
+
+git log -----------------------------------> tells us about all the commits made to the file, in short gives us details about al the commits
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<-----------------------------------------------------------------------SECOND DAY------------------------------------------------------------------------>
+                                                                        (VIDEO 5)
+ 
+
+rm -rf .git -------------------------> It deletes the .git folder
+
+git clone URL ------------------------> This command is used for cloning a repository URL = URL of that repositiory
+
+When we cloned a repostiroy then that repository now belongs to us and we can do anything that we want to with that repostiroy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<-----------------------------------------------------------------------THIRD DAY------------------------------------------------------------------------>
+                                                                        (VIDEO 6-10)
+
+Repository: Files and Folders.
+.git      : Contains all the info. related to the repo.(Modifications, Changes, etc.)
+Initially all files are untracked.
+git add --a, add all the files to the staging area, and they all have become unmodified files.
+and changes made further in any of the file then they have become modifided files.
+git add "FileName" : Put the modified file in staging area too.
+Messages are only shown on commitment of files only
+
+
+.gitignore:  used to store files which we dont want to bother about (for example: error.log)
+create new files using touch filename.extension
+add files manually in .gitignore then git will ignore them
+*.log ---------> write this in .gitignore, this will ignore all the .log files
+we can do the same with folderrs, like if we want to ignore the folderr then open the .gitignore file and write their foldername/
+
+
+git diff ------------> used to compare the working directory with the staging directory
+
+git diff --staged -------> used to compare the staging directory with the previous staging directory
+
+
+<<<<<<<SKIP STAGING STEP>>>>>>>>>>>>
+ git commit -a -m "Direct Commit"    ---------> dont need to you use the "git add --a" step, directly commits the changes
+
+<<<<<<Moving And Renaming Files in GIT>>>>>>>>
+
+git rm FILENAME.EXTENSION -------> this will delete the file
+git mv first.txt first_renamed.txt ------> this will rename the file first.txt to first_renamed.txt
+to ignore a file later on(i.e. earlier the file was being tracked by the git) --------> git rm --cached filename.extension   (the git will then tracking the file)
+
+
+
+
+
+
+
+
+
+
+<-----------------------------------------------------------------------FOURTH DAY------------------------------------------------------------------------>
+                                                                        (VIDEO 11)
+
+git log -p -------------> tells about the changes made before commiting the new version
+
+git log -p -3 -----------> does the same function as above but this time just show 3 commits.
+
+git log --stat ----------> tells about the changes made in long story short form
+
+git log --pretty=oneline -----> tells about the changes made in one line.
+	
+git log --pretty=short  ----------> 
+  
+git log --pretty=long    ------>
+
+git log --since=2.days -------> log of previous 2 days
+
+<<<<<<to view the info. in the format you want to>>>>>
+
+git log --pretty=format:"%h -- %an"     -----------------> git scm usefull options for git log format(search on web to know about pretty formats)
+
+git log -p -1           -----> tells about the complete details about the last commit
+
+git commit --ammend   ---------> open the VM  Editor
+
+git restore FILENAME.EXTENSION --------> to discard changes made in a file which is not in staging area yet
+
+
+
+
+
+
+
+
+
+<-----------------------------------------------------------------------FIFTH DAY------------------------------------------------------------------------>
+                                                                        (VIDEO 12-)
+
+
+
+git restore --staged FILENAME.EXTENSION ---------------> this is used to unstage a file
+
+git checkout -- FILENAME.EXTENSION      ----------------> makes the file content look similar to the last commit
+
+git checkout -f                         ----------------> make the content of all the files go back to the last commit
+
+
+                                             <<<<<<<<<<<<<<<<<<<<<<Working with REMOTE REPOSITORY>>>>>>>>>>>>>>>>
+pull (a code)                     ------------------> the code present on the github also will be copied to my personal PC
+
+push (a code)                     -------------------> tranference of the code from my pc to github
+
+git remote                        ------------------> tells us the name of the website where are code is being pulled.
+CREATING A NEW REPOSITORY
+git remote add origin git@github.com:prabhxjottsingh/gittutorialdemo.git      -----------> origin is the name of the URL(website), where our code is gonna be pulled
+
+git remote -v                      ------------------> tells about two websites (1.From where our code is being pulled, 2.Where we are gnna push our code)
+
+git push -u origin main            -------------------> upload the new commited file on the repository on the github
+
+
+git config --global alias.st status --------------> to give nicknames to few long git commands for are comfort purposes.
+after running the above command we will get, (git status = git st)
+
+
+Learning about branches, now. (Video 15)
+Default Branch: MASTER
+we can create as many branches in a repo. as many we want, and later on if we find that branch good, then we can merge it with the master branch.
+
+git checkout -b BRANCHNAME -------> It will make a new branch, with the name you want to.
+(For Example: git checkout -b develop_prabh)
+
+git checkout master       ----------> it is used to switch from one branch to master branch.
+git checkout develop_prabh  --------> it is used to switch from any branch to develop_prabh branch
+git branch                ----------> tells us about all the branches in the repository
+git merge trycleanup      ----------> this thing will merge the trycleanup branch and the master branch
+git branch -v             ----------> tells us about all the branches in the repository along with their last commit message
+git branch -d BRANCHNAME  -----------> this will delte the branch (gives error if, branchname is not merged)
+git branch -D BRANCHNAME ------------> if you want to delete a branch without merging it in the master branch
+git branch --merged      -----------> this will show the branches
+git branch --no-merged   ----------> this will the show the non-merged branches
+
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Pushing Git BRanches to Remote Repositories>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+git push origin BRANCHNAME       ----------> it is highly recommended to be in that branch only which you want to push
+git push origin bugfix:mybugfix  ----------> this will rename the bugfix branch as mubugfix n the remote repository
+git push -d origin BRANCHNAME   ------------> this will automatically delete the branch on the github account of the user

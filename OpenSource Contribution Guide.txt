@@ -1,0 +1,40 @@
+Step 1: FORK the repository, you want to contribute to.
+
+--After above step open git bash in the folder you want to download the repo to.
+
+Step 2: git clone https://github.com/<your_user_name>/Programming-Basics.git    //this will download the repo on you local device
+
+Step 3: cd <repository name> (this will open the project directory in the gt bash directory) 
+OR
+Step 3: you can close the opened git bash terminal, and then again open the new git bash terminal in the repo., that you downloaded in your local device.
+
+Step 4: Add a reference(remote) to the original repository. (this would connect your local repo with the remote one)
+        git remote add upstream REMOTE REPO URL
+
+Step 5: Check the remotes for this repository. (this will tell you the names of the remote repo. connected, i.e. URL from where the code is being pulled, and where it will be pushed)
+        git remote -v
+
+Step 6:  Always take a pull from the upstream repository to your master branch to keep it at par with the main project(updated repository).
+         git pull upstream main/master
+
+Step 7: Create a new branch to perform your changes
+        git checkout -b <your_branch_name>
+
+Step 8: perform the desired changes that you want to and boom you are done with the changes.
+
+Step 9: Track your changes
+        git add .
+
+Step 10: commit to your changes
+         git commit -m "<type a message>"
+
+Step 11: push the committed changes in your feature branch to your remote repo
+         git push -u origin <branch name you gave earlier>
+
+Step 12. To create a pull request, click on compare and pull requests.
+
+Step 13. Add appropriate title and description to your pull request explaining your changes and efforts done.
+
+Step 14. Click on Create Pull Request.
+
+15. Woohoo! You have made a PR to the Programming-Basics ?? . Wait for your submission to be accepted and your PR to be merged. 
